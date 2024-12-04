@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Profile Section</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      background: url('background.jpg') no-repeat;
+      background-size: cover;
+      background-position: center;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    .profile-container {
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      width: 400px;
+      padding: 20px;
+      text-align: center;
+    }
+    .profile-photo {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      margin-bottom: 20px;
+      object-fit: cover;
+      border: 2px solid #007bff;
+    }
+    .profile-details {
+      text-align: left;
+    }
+    .profile-details h3 {
+      margin: 0 0 10px;
+      color: #333;
+    }
+    .profile-details p {
+      text-align: left;
+      margin: 5px 0;
+      color: #555;
+      font-size: 14px;
+    }
+    .edit-button {
+      background-color: #007bff;
+      color: white;
+      padding: 10px 15px;
+      border: none;
+      border-radius: 5px;
+      font-size: 14px;
+      cursor: pointer;
+      margin-top: 15px;
+    }
+    .edit-button:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+    <main class="main"></main>
+        <header class="header">
+            <a href="#" class="logo">Quiz</a>
+
+            <nav class="navbar">
+                <a href="start.html" class="active">Home</a>
+                <a href="#">About</a>
+                <a href="#">Services</a>
+                <a href="#">Contact</a>
+                <a href="profile.html">Profile</a>
+            </nav>
+        </header>
+
+        <section class="home">
+            <div class="home-content">
+
+                <div class="profile-container">
+                <img id="profilePhoto" class="profile-photo" src="default-profile.png" alt="Profile Photo">
+                <div class="profile-details">
+                <h3 id="name">John Doe</h3>
+                <p id="email">Email: johndoe@example.com</p>
+                <p id="phone">Phone: +123456789</p>
+                <p id="address">Institute Name: LNCT</p>
+                </div>
+                <button class="edit-button" onclick="editProfile()">Edit Profile</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+  <script>
+    // Simulating user data (usually retrieved from a server)
+    const userData = {
+      photo: "https://via.placeholder.com/100",
+      name: "Jane Smith",
+      email: "janesmith@example.com",
+      phone: "+9876543210",
+      address: "456 Elm Street, Townsville",
+    };
+
+    // Function to populate user data
+    function populateProfile() {
+      document.getElementById("profilePhoto").src = userData.photo;
+      document.getElementById("name").textContent = userData.name;
+      document.getElementById("email").textContent = `Email: ${userData.email}`;
+      document.getElementById("phone").textContent = `Phone: ${userData.phone}`;
+      document.getElementById("address").textContent = `Address: ${userData.address}`;
+    }
+
+    // Simulating an Edit Profile button action
+    function editProfile() {
+      alert("Edit Profile feature coming soon!");
+      // Implement a modal or redirect to an edit form here
+    }
+
+    // Populate profile on page load
+    populateProfile();
+  </script>
+</body>
+</html>
